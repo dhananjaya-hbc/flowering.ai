@@ -1,4 +1,4 @@
-# 🌸 Flowerina - Ballerina Code Generator
+# Flowerina - Ballerina Code Generator
 
 A full-stack web application that generates Ballerina backend services from natural language prompts and creates interactive flowcharts to visualize the service architecture.
 
