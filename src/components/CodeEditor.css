@@ -1,0 +1,188 @@
+.code-editor {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+.code-editor-header {
+  background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.code-editor-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.code-editor-title::before {
+  content: "⚡";
+  font-size: 1.1rem;
+  color: var(--accent-green);
+  filter: drop-shadow(0 0 4px rgba(25, 195, 125, 0.3));
+}
+
+.copy-button {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.copy-button::before {
+  content: "📋";
+  font-size: 0.8rem;
+}
+
+.copy-button:hover {
+  background-color: var(--hover-bg);
+  border-color: var(--accent-blue);
+}
+
+.copy-button.copied {
+  background-color: rgba(78, 201, 176, 0.2);
+  border-color: var(--accent-green);
+  color: var(--accent-green);
+}
+
+.copy-button.copied::before {
+  content: "✅";
+}
+
+.editor-container {
+  flex: 1;
+  background-color: var(--bg-primary);
+}
+
+.code-editor .cm-editor {
+  font-family: 'Consolas', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  height: 100%;
+}
+
+.code-editor .cm-scroller {
+  font-family: inherit;
+}
+
+.code-editor .cm-focused {
+  outline: none;
+}
+
+.code-editor .cm-gutters {
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+}
+
+.code-editor .cm-lineNumbers .cm-gutterElement {
+  color: rgba(204, 204, 204, 0.5);
+  padding: 0 8px;
+  min-width: 40px;
+}
+
+.code-editor .cm-content {
+  padding: 16px;
+  min-height: 100%;
+}
+
+/* Custom scrollbar for code editor */
+.code-editor .cm-scroller::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.code-editor .cm-scroller::-webkit-scrollbar-track {
+  background: #21252b;
+}
+
+.code-editor .cm-scroller::-webkit-scrollbar-thumb {
+  background: #5c6370;
+  border-radius: 4px;
+}
+
+.code-editor .cm-scroller::-webkit-scrollbar-thumb:hover {
+  background: #abb2bf;
+}
+
+@media (max-width: 768px) {
+  .code-editor-header {
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .code-editor-title {
+    font-size: 0.8rem;
+  }
+  
+  .copy-button {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+  
+  .code-editor .cm-editor {
+    font-size: 12px;
+  }
+  
+  .code-editor .cm-content {
+    padding: 12px;
+  }
+  
+  .code-editor .cm-lineNumbers .cm-gutterElement {
+    padding: 0 6px;
+    min-width: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .code-editor-header {
+    padding: 0.4rem 0.6rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .code-editor-title {
+    font-size: 0.75rem;
+  }
+  
+  .copy-button {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.7rem;
+    align-self: flex-end;
+  }
+  
+  .code-editor .cm-editor {
+    font-size: 11px;
+  }
+  
+  .code-editor .cm-content {
+    padding: 8px;
+  }
+  
+  .code-editor .cm-lineNumbers .cm-gutterElement {
+    padding: 0 4px;
+    min-width: 30px;
+  }
+}
